@@ -18,16 +18,16 @@ The pipeline is split in two parts, one taking care of all steps until binning, 
 
 The second pipeline takes in a metaData.csv, which contains pairs of samples and individuals from which the samples originated. This can be usefull when not wanting to dereplicte across individuals to preserve potential strain differneces. The format should look like:
 
-'''
+```
 S1,IDV1
 S2,IDV1
 S3,IDV2
 S4,IDV2
 S5,IDV2
-'''
+```
 
 To run the pipeline:
-'''
+```
 nextflow ./01.CleanProfileBin.nf --reads './FASTQ/P137_*_{1,2}.fq.gz'
 nextflow ./02.ClassAnnotMap.nf --basaltBins 'BASALT_BINS/*' --metaData metaData.csv --cleanReads 'CLEANREADS/P137_*_{1,2}.clean.fq.gz'
-'''
+```
