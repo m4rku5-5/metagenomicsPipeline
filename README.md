@@ -31,3 +31,6 @@ To run the pipeline:
 nextflow ./01.CleanProfileBin.nf --reads './FASTQ/P137_*_{1,2}.fq.gz'
 nextflow ./02.ClassAnnotMap.nf --basaltBins 'BASALT_BINS/*' --metaData metaData.csv --cleanReads 'CLEANREADS/P137_*_{1,2}.clean.fq.gz'
 ```
+
+It is strongly advised to run this on a high performance cluster, as some steps can consume up to 128GB of RAM or benefit greatly from multicore CPUs (>48 cores). Sufficient disk space (>5TB) is recommended.
+On such a cluster the pipeline can take up to 2 days to run about 130 samples. 
